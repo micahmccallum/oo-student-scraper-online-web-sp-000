@@ -48,6 +48,5 @@ class Scraper
   def self.get_doc(url)
     Nokogiri::HTML(open(url))
   end
-    
 
 end
