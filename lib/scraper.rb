@@ -27,9 +27,15 @@ class Scraper
     links = social_icon_container.xpath("//a")
     image_links = links.xpath("//img")
     image_urls = image_links.map {|link| link[:src]}
+    binding.pry
+    
     
     links.each do |link|
-      blog_link = link[:href] if link.css("img").first["src"].include?("../assets/img/rss-icon.png")
+      
+      blog_link = link[:href] if links.css("img[src*='rss-icon']").first["src"] == "../assets/img/rss-icon.png"
+      
+      
+      
       link_array << link[:href]
     end
     
