@@ -32,6 +32,7 @@ class Scraper
     end
     
     link_array.each do |link|
+      binding.pry
       social_networks.each do |network|
         student_hash[network.to_sym] =  link if link.include?(network)
       end
